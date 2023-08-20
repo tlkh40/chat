@@ -53,7 +53,7 @@ class CreateChannel extends Component
 
                             <x-text-input
                                 id="Name"
-                                wire:model.blur="name"
+                                wire:model.blur.debounce.500ms="name"
                                 name="name"
                                 class="mt-1 block w-full"
                                 placeholder="{{ __('General') }}"

@@ -43,7 +43,7 @@ class ChatView extends Component
             <div class="flex flex-col gap-3">
                 <form wire:submit="sendMessage" class="flex">
                     <div class="flex flex-col flex-1">
-                        <x-text-input id="chatMessage" name="chatMessage" wire:model.blur="chatMessage" placeholder="Send a message..." class="flex-1" />
+                        <x-text-input id="chatMessage" name="chatMessage" wire:model.blur.debounce.500ms="chatMessage" placeholder="Send a message..." class="flex-1" />
                     </div>
                     <x-secondary-button type="submit">
                         Send
